@@ -2,6 +2,7 @@
 
 total = float(input("Total bill amount? "))
 service = input("Level of service? ")
+service = service.lower()
 if service == 'good':
     tip_percent =.2
     

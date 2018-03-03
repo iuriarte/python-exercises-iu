@@ -2,6 +2,7 @@
 
 bill = float(input("Total bill amount? "))
 service = input("Level of service? ")
+service = service.lower()
 split = float(input("Split how many ways? "))
 
 if service == 'good':
