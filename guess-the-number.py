@@ -8,11 +8,17 @@ print('You have 5 guesses left.')
 
 guessed_number = 0
 number_of_guesses = 5
+play_again = 'yes'
 
-while (guessed_number != secret_number) :
+while (guessed_number != secret_number and play_again == 'yes') :
     if number_of_guesses == 0:
         print('you ran out of guesses!')
-        break 
+        play_again = input('Whatn to play again?')
+        play_again = play_again.lower()
+        if play_again == 'yes':
+            number_of_guesses = 0
+        if play_again =='no':
+            break
     guessed_number = int(input('What\'s the number?'))
     number_of_guesses -= 1
     if guessed_number != secret_number:
@@ -25,3 +31,11 @@ while (guessed_number != secret_number) :
         print('You have {} guesses left'.format(number_of_guesses))
     else:
         print('Yes! You win!')
+        play_again = input('Want to play again? -FINAL')
+        play_again = play_again.lower()
+        if play_again == 'yes':
+            number_of_guesses = 0
+            print('***value of play_again is ', play_again)
+        if play_again =='no':
+            break
+        
